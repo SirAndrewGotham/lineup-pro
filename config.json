@@ -1,0 +1,38 @@
+{
+  "app": {
+    "name": "LineUp Pro",
+    "version": "1.0.0",
+    "developer_mode": false
+  },
+  "training": {
+    "default_mode": "guided",
+    "show_timer": true,
+    "enable_sounds": true,
+    "enable_haptics": false,
+    "voice_guidance": false,
+    "auto_advance": true
+  },
+  "scoring": {
+    "passing_score": 70,
+    "time_bonus_enabled": true,
+    "show_detailed_feedback": true
+  },
+  "ui": {
+    "theme": "light",
+    "language": "ru",
+    "font_size": "medium",
+    "animation_speed": "normal"
+  },
+  "data": {
+    "auto_backup": true,
+    "backup_interval_hours": 24,
+    "sync_enabled": false,
+    "sync_server_url": ""
+  },
+  "paths": {
+    "assets": "assets/",
+    "database": "lineup_pro.db",
+    "backups": "backups/",
+    "exports": "exports/"
+  }
+}

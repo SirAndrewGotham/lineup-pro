@@ -1,6 +1,6 @@
 # Core dependencies - updated for Python 3.13 compatibility
-kivy>=2.2.1
-kivymd>=1.1.1
+kivy==2.3.0
+kivymd==1.2.0
 # Database
 dataset>=1.6.0
 # Utilities - use newer versions that support Python 3.13
