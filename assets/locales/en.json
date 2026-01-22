@@ -1,0 +1,124 @@
+{
+  "app": {
+    "title": "LineUp Pro - Training Simulator",
+    "subtitle": "Fast-Food Assembly Training",
+    "version": "Version"
+  },
+  "main_menu": {
+    "title": "Training Simulator",
+    "guided_mode": "Guided Training",
+    "practice_mode": "Practice Mode",
+    "exam_mode": "Exam Mode",
+    "progress": "Progress Tracking",
+    "settings": "Settings",
+    "help": "Help"
+  },
+  "training": {
+    "select_template": "Select Training Template",
+    "difficulty": "Difficulty",
+    "time_target": "Target Time",
+    "start_training": "Start Training",
+    "back": "Back"
+  },
+  "guided_mode": {
+    "title": "Guided Training",
+    "step": "Step",
+    "of": "of",
+    "next": "Next",
+    "previous": "Previous",
+    "complete": "Complete",
+    "instruction": "Instruction"
+  },
+  "practice_mode": {
+    "title": "Practice Mode",
+    "timer": "Timer",
+    "errors": "Errors",
+    "score": "Score",
+    "complete_assembly": "Complete Assembly"
+  },
+  "exam_mode": {
+    "title": "Exam Mode",
+    "time_remaining": "Time Remaining",
+    "cannot_go_back": "Cannot go back in exam mode",
+    "submission": "Submit for Grading",
+    "passed": "PASSED",
+    "failed": "FAILED"
+  },
+  "progress": {
+    "title": "Progress Tracking",
+    "overall_score": "Overall Score",
+    "accuracy": "Accuracy",
+    "speed": "Speed",
+    "sessions_completed": "Sessions Completed",
+    "templates_mastered": "Templates Mastered",
+    "recent_sessions": "Recent Sessions",
+    "date": "Date",
+    "mode": "Mode",
+    "template": "Template",
+    "grade": "Grade"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "sounds": "Sounds",
+    "haptic_feedback": "Haptic Feedback",
+    "voice_guidance": "Voice Guidance",
+    "show_timer": "Show Timer",
+    "save": "Save",
+    "reset": "Reset to Defaults",
+    "language_options": {
+      "en": "English",
+      "ru": "Русский"
+    },
+    "theme_options": {
+      "light": "Light",
+      "dark": "Dark"
+    }
+  },
+  "ingredients": {
+    "bottom_bun": "Bottom Bun",
+    "top_bun": "Top Bun",
+    "beef_patty": "Beef Patty",
+    "chicken_patty": "Chicken Patty",
+    "cheese_slice": "Cheese Slice",
+    "lettuce": "Lettuce",
+    "tomato": "Tomato",
+    "onion": "Onion",
+    "pickles": "Pickles",
+    "special_sauce": "Special Sauce",
+    "ketchup": "Ketchup",
+    "mustard": "Mustard",
+    "mayonnaise": "Mayonnaise"
+  },
+  "sandwiches": {
+    "classic_burger": "Classic Burger",
+    "cheeseburger": "Cheeseburger",
+    "chicken_sandwich": "Chicken Sandwich",
+    "double_burger": "Double Burger",
+    "vegetarian": "Vegetarian Burger"
+  },
+  "stations": {
+    "grill": "Grill Station",
+    "fry": "Fry Station",
+    "assembly": "Assembly Line",
+    "drinks": "Drinks Station"
+  },
+  "feedback": {
+    "correct": "Correct!",
+    "incorrect": "Try Again",
+    "perfect": "Perfect Placement!",
+    "wrong_order": "Wrong Order",
+    "wrong_placement": "Wrong Placement",
+    "missing_ingredient": "Missing Ingredient",
+    "time_up": "Time's Up!",
+    "assembly_complete": "Assembly Complete!",
+    "well_done": "Well Done!"
+  },
+  "errors": {
+    "load_failed": "Failed to load",
+    "save_failed": "Failed to save",
+    "network_error": "Network Error",
+    "file_not_found": "File Not Found"
+  }
+}
