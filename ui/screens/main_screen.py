@@ -1,129 +1,104 @@
+# ui/screens/main_screen.py - Fixed version
+import os
 from kivy.uix.screenmanager import Screen
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
-from kivy.uix.label import Label
+from kivymd.uix.boxlayout import MDBoxLayout
 from kivy.uix.image import Image
-from kivy.uix.gridlayout import GridLayout
-from kivymd.uix.card import MDCard
-from kivymd.uix.button import MDRaisedButton
-from kivymd.uix.label import MDLabel
-from kivymd.uix.dialog import MDDialog
-from kivymd.uix.menu import MDDropdownMenu
+from utils.translation_mixin import TranslatableLabel, TranslatableButton, TranslatableMixin
 
-from utils.translation_mixin import TranslatableMixin
 
-class TranslatableLabel(MDLabel, TranslatableMixin):
-    """Label with translation support"""
-    pass
+class MainScreen(Screen, TranslatableMixin):
+    """Main menu screen"""
 
-class TranslatableButton(MDRaisedButton, TranslatableMixin):
-    """Button with translation support"""
-    pass
-
-class MainScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.name = 'main'
         self.setup_ui()
 
     def setup_ui(self):
-        layout = BoxLayout(orientation='vertical', padding=20, spacing=20)
-
-        # Header
-        header = BoxLayout(orientation='horizontal', size_hint_y=0.15)
-        logo = Image(source='assets/images/logo.png' if os.path.exists('data/logo.png') else '', size_hint_x=0.3)
-        title = TranslatableLabel(
-            translation_key='app.title',
-            halign='center',
-            font_style='H4',
-            size_hint_x=0.7
+        # Create main layout
+        layout = MDBoxLayout(
+            orientation='vertical',
+            padding=40,
+            spacing=20,
+            size_hint=(1, 1)
         )
+
+        # Logo - Check if file exists
+        logo_path = 'assets/images/logo.png'
+        if os.path.exists(logo_path):
+            logo = Image(
+                source=logo_path,
+                size_hint=(1, 0.4),
+                allow_stretch=True,
+                keep_ratio=True
+            )
+            layout.add_widget(logo)
+        else:
+            # If no logo, add a title instead
+            title = TranslatableLabel(
+                translation_key='app_title',
+                font_style='H3',
+                halign='center',
+                size_hint=(1, 0.2)
+            )
+            layout.add_widget(title)
+
+        # Subtitle
         subtitle = TranslatableLabel(
-            translation_key='app.subtitle',
+            translation_key='main_title',
+            font_style='H5',
             halign='center',
-            font_style='Subtitle1',
-            size_hint_x=0.7
+            size_hint=(1, 0.1)
         )
+        layout.add_widget(subtitle)
 
-        title_layout = BoxLayout(orientation='vertical')
-        title_layout.add_widget(title)
-        title_layout.add_widget(subtitle)
-
-        header.add_widget(logo)
-        header.add_widget(title_layout)
-
-        # Training modes grid
-        modes_grid = GridLayout(cols=1, spacing=15, size_hint_y=0.6)
-
-        modes = [
-            ('guided_mode', 'training', 'assets/images/guided.png'),
-            ('practice_mode', 'practice', 'assets/images/practice.png'),
-            ('exam_mode', 'exam', 'assets/images/exam.png'),
-            ('progress', 'progress', 'assets/images/progress.png')
+        # Create buttons for different modes
+        buttons = [
+            ('training_button', self.start_training),
+            ('practice_button', self.start_practice),
+            ('exam_button', self.start_exam),
+            ('progress_button', self.show_progress),
+            ('settings_button', self.show_settings),
+            ('exit_button', self.exit_app)
         ]
 
-        for translation_key, screen_name, icon in modes:
-            card = MDCard(
-                orientation='vertical',
-                padding=15,
-                size_hint_y=None,
-                height=100
+        for translation_key, callback in buttons:
+            btn = TranslatableButton(
+                translation_key=translation_key,
+                size_hint=(1, 0.12),
+                md_bg_color=(0.2, 0.6, 0.8, 1)
             )
-            card.add_widget(Image(source=icon, size_hint_y=0.6))
+            btn.bind(on_release=callback)
+            layout.add_widget(btn)
 
-            label = TranslatableLabel(
-                translation_key=f'main_menu.{translation_key}',
-                halign='center',
-                font_style='H6'
-            )
-            card.add_widget(label)
-            card.bind(on_press=lambda x, s=screen_name: self.switch_screen(s))
-            modes_grid.add_widget(card)
-
-        # Footer with settings and help
-        footer = BoxLayout(orientation='horizontal', size_hint_y=0.1, spacing=10)
-
-        settings_btn = TranslatableButton(
-            translation_key='main_menu.settings',
-            size_hint_x=0.5
-        )
-        settings_btn.bind(on_press=self.open_settings)
-
-        help_btn = TranslatableButton(
-            translation_key='main_menu.help',
-            size_hint_x=0.5
-        )
-        help_btn.bind(on_press=self.open_help)
-
-        footer.add_widget(settings_btn)
-        footer.add_widget(help_btn)
-
-        layout.add_widget(header)
-        layout.add_widget(modes_grid)
-        layout.add_widget(footer)
         self.add_widget(layout)
 
-    def switch_screen(self, screen_name):
-        self.manager.current = screen_name
+    def start_training(self, instance):
+        """Start guided training mode"""
+        print("Starting training mode")
+        # self.manager.current = 'training'
 
-    def open_settings(self, instance):
-        # Switch to settings screen or open dialog
-        # For now, we'll switch to a settings screen
-        from ui.screens.settings_screen import SettingsScreen
-        if 'settings' not in self.manager.screen_names:
-            settings_screen = SettingsScreen(name='settings')
-            settings_screen.app = self.app
-            self.manager.add_widget(settings_screen)
+    def start_practice(self, instance):
+        """Start practice mode"""
+        print("Starting practice mode")
+        # self.manager.current = 'practice'
+
+    def start_exam(self, instance):
+        """Start exam mode"""
+        print("Starting exam mode")
+        # self.manager.current = 'exam'
+
+    def show_progress(self, instance):
+        """Show progress screen"""
+        print("Showing progress")
+        # self.manager.current = 'progress'
+
+    def show_settings(self, instance):
+        """Show settings screen"""
+        print("Showing settings")
         self.manager.current = 'settings'
 
-    def open_help(self, instance):
-        # Open help dialog
-        from utils.translation import translation_manager
-        text = translation_manager.translate('app.title') + "\n\n" + \
-               translation_manager.translate('app.subtitle')
-
-        dialog = MDDialog(
-            title=translation_manager.translate('main_menu.help'),
-            text=text,
-            size_hint=(0.8, 0.4)
-        )
-        dialog.open()
+    def exit_app(self, instance):
+        """Exit the application"""
+        from kivy.app import App
+        App.get_running_app().stop()
