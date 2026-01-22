@@ -30,7 +30,7 @@ class MainScreen(Screen):
 
         # Header
         header = BoxLayout(orientation='horizontal', size_hint_y=0.15)
-        logo = Image(source='assets/images/logo.png', size_hint_x=0.3)
+        logo = Image(source='assets/images/logo.png' if os.path.exists('data/logo.png') else '', size_hint_x=0.3)
         title = TranslatableLabel(
             translation_key='app.title',
             halign='center',
