@@ -65,7 +65,7 @@ def test_translation_system():
     """Test translation files"""
     print("\n=== Testing Translation System ===")
 
-    locale_path = 'assets/locales'
+    locale_path = '../assets/locales'
     if os.path.exists(locale_path):
         files = os.listdir(locale_path)
         print(f"✓ Locales directory exists. Files: {files}")
@@ -88,7 +88,7 @@ def test_main_app():
 
     try:
         # Check if main.py exists and can be parsed
-        with open('main.py', 'r') as f:
+        with open('../main.py', 'r') as f:
             content = f.read()
             if 'class LineUpPro' in content or 'class MainApp' in content:
                 print("✓ Main application class found in main.py")

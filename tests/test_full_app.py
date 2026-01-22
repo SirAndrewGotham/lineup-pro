@@ -37,8 +37,8 @@ for module in modules_to_test:
 
 # Test 4: Check translation files
 print("\n3. Translation Files:")
-if os.path.exists('assets/locales'):
-    for file in os.listdir('assets/locales'):
+if os.path.exists('../assets/locales'):
+    for file in os.listdir('../assets/locales'):
         if file.endswith('.json'):
             size = os.path.getsize(f'assets/locales/{file}')
             print(f"   ✓ {file} ({size} bytes)")
