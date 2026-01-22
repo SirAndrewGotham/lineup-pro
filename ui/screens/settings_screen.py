@@ -77,7 +77,7 @@ class SettingsScreen(Screen):
         app = App.get_running_app()
 
         if hasattr(app, 'config_manager'):
-            current_lang = app.config_manager.get('general', 'language', 'en')
+            current_lang = app.config_manager.get('general', 'language') or 'en'
             new_lang = 'ru' if current_lang == 'en' else 'en'
             app.config_manager.set('general', 'language', new_lang)
 
@@ -93,7 +93,7 @@ class SettingsScreen(Screen):
         app = App.get_running_app()
 
         if hasattr(app, 'config_manager'):
-            current_lang = app.config_manager.get('general', 'language', 'en')
+            current_lang = app.config_manager.get("general", "language") or "en"
             self.lang_button.text = 'Русский' if current_lang == 'en' else 'English'
 
     def go_back(self, instance):

@@ -1,124 +1,19 @@
 {
-  "app": {
-    "title": "LineUp Pro - Тренажер Сборки",
-    "subtitle": "Тренировка сборки фаст-фуда",
-    "version": "Версия"
-  },
-  "main_menu": {
-    "title": "Тренажер Сборки",
-    "guided_mode": "Обучение с подсказками",
-    "practice_mode": "Режим Практики",
-    "exam_mode": "Экзаменационный Режим",
-    "progress": "Отслеживание Прогресса",
-    "settings": "Настройки",
-    "help": "Помощь"
-  },
-  "training": {
-    "select_template": "Выберите Шаблон",
-    "difficulty": "Сложность",
-    "time_target": "Целевое Время",
-    "start_training": "Начать Тренировку",
-    "back": "Назад"
-  },
-  "guided_mode": {
-    "title": "Обучение с Подсказками",
-    "step": "Шаг",
-    "of": "из",
-    "next": "Далее",
-    "previous": "Назад",
-    "complete": "Завершить",
-    "instruction": "Инструкция"
-  },
-  "practice_mode": {
-    "title": "Режим Практики",
-    "timer": "Таймер",
-    "errors": "Ошибки",
-    "score": "Счет",
-    "complete_assembly": "Завершить Сборку"
-  },
-  "exam_mode": {
-    "title": "Экзаменационный Режим",
-    "time_remaining": "Осталось Времени",
-    "cannot_go_back": "В экзаменационном режиме нельзя возвращаться",
-    "submission": "Отправить на Проверку",
-    "passed": "СДАЛ",
-    "failed": "НЕ СДАЛ"
-  },
-  "progress": {
-    "title": "Отслеживание Прогресса",
-    "overall_score": "Общий Счет",
-    "accuracy": "Точность",
-    "speed": "Скорость",
-    "sessions_completed": "Сессий Завершено",
-    "templates_mastered": "Шаблонов Освоено",
-    "recent_sessions": "Последние Сессии",
-    "date": "Дата",
-    "mode": "Режим",
-    "template": "Шаблон",
-    "grade": "Оценка"
-  },
-  "settings": {
-    "title": "Настройки",
-    "language": "Язык",
-    "theme": "Тема",
-    "sounds": "Звуки",
-    "haptic_feedback": "Тактильная Обратная Связь",
-    "voice_guidance": "Голосовые Подсказки",
-    "show_timer": "Показывать Таймер",
-    "save": "Сохранить",
-    "reset": "Сбросить настройки",
-    "language_options": {
-      "en": "Английский",
-      "ru": "Русский"
-    },
-    "theme_options": {
-      "light": "Светлая",
-      "dark": "Темная"
-    }
-  },
-  "ingredients": {
-    "bottom_bun": "Нижняя Булочка",
-    "top_bun": "Верхняя Булочка",
-    "beef_patty": "Говяжья Котлета",
-    "chicken_patty": "Куриная Котлета",
-    "cheese_slice": "Ломтик Сыра",
-    "lettuce": "Салат",
-    "tomato": "Помидор",
-    "onion": "Лук",
-    "pickles": "Огурцы",
-    "special_sauce": "Специальный Соус",
-    "ketchup": "Кетчуп",
-    "mustard": "Горчица",
-    "mayonnaise": "Майонез"
-  },
-  "sandwiches": {
-    "classic_burger": "Классический Бургер",
-    "cheeseburger": "Чизбургер",
-    "chicken_sandwich": "Куриный Сэндвич",
-    "double_burger": "Двойной Бургер",
-    "vegetarian": "Вегетарианский Бургер"
-  },
-  "stations": {
-    "grill": "Гриль Станция",
-    "fry": "Фритюрница",
-    "assembly": "Линия Сборки",
-    "drinks": "Напитки"
-  },
-  "feedback": {
-    "correct": "Правильно!",
-    "incorrect": "Попробуйте еще раз",
-    "perfect": "Идеальное Размещение!",
-    "wrong_order": "Неверный Порядок",
-    "wrong_placement": "Неверное Размещение",
-    "missing_ingredient": "Отсутствует Ингредиент",
-    "time_up": "Время Вышло!",
-    "assembly_complete": "Сборка Завершена!",
-    "well_done": "Отлично!"
-  },
-  "errors": {
-    "load_failed": "Не удалось загрузить",
-    "save_failed": "Не удалось сохранить",
-    "network_error": "Ошибка Сети",
-    "file_not_found": "Файл Не Найден"
-  }
+  "app_title": "LineUp Pro",
+  "main_title": "Тренажер сборки",
+  "training_button": "Начать обучение",
+  "practice_button": "Режим практики",
+  "exam_button": "Экзамен",
+  "progress_button": "Прогресс",
+  "settings_button": "Настройки",
+  "exit_button": "Выход",
+  "settings_title": "Настройки",
+  "language_label": "Язык",
+  "back_button": "Назад в меню",
+  "sound_label": "Звук",
+  "haptic_label": "Вибрация",
+  "difficulty_label": "Сложность",
+  "timer_label": "Таймер",
+  "select_language": "Выберите язык",
+  "toggle_language": "Переключить язык"
 }
