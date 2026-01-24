@@ -61,7 +61,7 @@ class SettingsScreen(Screen):
         back_btn = TranslatableButton(
             translation_key='back_button',
             size_hint=(1, 0.2),
-            md_bg_color=(0.2, 0.6, 0.8, 1) if hasattr(TranslatableButton, 'md_bg_color') else None
+            background_color=(0.2, 0.6, 0.8, 1) if hasattr(TranslatableButton, 'background_color') else None
         )
         back_btn.bind(on_release=self.go_back)
         layout.add_widget(back_btn)
@@ -72,20 +72,39 @@ class SettingsScreen(Screen):
         self.update_language_button()
 
     def toggle_language(self, instance):
-        """Toggle between English and Russian"""
-        from kivy.app import App
-        app = App.get_running_app()
+        """Toggle between Russian and English"""
+        from main import LineUpPro
+        app = LineUpPro.get_running_app()
 
-        if hasattr(app, 'config_manager'):
-            current_lang = app.config_manager.get('general', 'language') or 'en'
-            new_lang = 'ru' if current_lang == 'en' else 'en'
-            app.config_manager.set('general', 'language', new_lang)
+        if app and hasattr(app, 'config_manager'):
+            # Get current language
+            current_lang = app.config_manager.get('ui.language', 'ru')
+            new_lang = 'en' if current_lang == 'ru' else 'ru'
+
+            # Save the new language setting
+            app.config_manager.set('ui.language', new_lang)
 
             # Update translation manager
             if hasattr(app, 'translation_manager'):
                 app.translation_manager.set_language(new_lang)
 
-            self.update_language_button()
+            # Update button text
+            instance.text = 'English' if new_lang == 'ru' else 'Русский'
+
+            # Update all screens
+            self.update_all_translations()
+
+    def update_all_translations(self):
+        """Update translations on all screens"""
+        from main import LineUpPro
+        app = LineUpPro.get_running_app()
+
+        if app and hasattr(app, 'sm'):
+            # Update each screen that has an update_translations method
+            for screen_name in app.sm.screen_names:
+                screen = app.sm.get_screen(screen_name)
+                if hasattr(screen, 'update_translations'):
+                    screen.update_translations()
 
     def update_language_button(self):
         """Update the language button text"""

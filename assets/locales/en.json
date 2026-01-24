@@ -15,5 +15,47 @@
   "difficulty_label": "Difficulty",
   "timer_label": "Timer",
   "select_language": "Select Language",
-  "toggle_language": "Toggle Language"
+  "toggle_language": "Toggle Language",
+  "flashcards_button": "Flashcards",
+
+  "main": {
+    "title": "LineUp Pro",
+    "subtitle": "Interactive Training Simulator",
+    "training_mode": "Training Mode",
+    "practice_mode": "Practice Mode",
+    "exam_mode": "Exam Mode",
+    "flashcards_mode": "Flashcards Mode",
+    "progress_tracking": "Progress Tracking",
+    "settings": "Settings",
+    "exit": "Exit"
+  },
+
+  "dish_big_hit": "Big Hit",
+  "dish_quarter_pounder": "Quarter Pounder",
+  "dish_chicken_sandwich": "Chicken Sandwich",
+  "dish_french_fries": "French Fries",
+  "dish_apple_pie": "Apple Pie",
+
+  "ingredient_bottom_bun": "Bottom Bun",
+  "ingredient_beef_patty": "Beef Patty",
+  "ingredient_cheese_slice": "Cheese Slice",
+  "ingredient_lettuce": "Lettuce",
+  "ingredient_pickles": "Pickles",
+  "ingredient_onions": "Onions",
+  "ingredient_ketchup": "Ketchup",
+  "ingredient_mustard": "Mustard",
+  "ingredient_top_bun": "Top Bun",
+  "ingredient_sesame_bun_bottom": "Sesame Bun Bottom",
+  "ingredient_quarter_patty": "Quarter Pound Patty",
+  "ingredient_tomato": "Tomato",
+  "ingredient_special_sauce": "Special Sauce",
+  "ingredient_brioche_bun": "Brioche Bun",
+  "ingredient_chicken_fillet": "Chicken Fillet",
+  "ingredient_mayonnaise": "Mayonnaise",
+  "ingredient_potatoes": "Potatoes",
+  "ingredient_vegetable_oil": "Vegetable Oil",
+  "ingredient_salt": "Salt",
+  "ingredient_pie_crust": "Pie Crust",
+  "ingredient_apple_filling": "Apple Filling",
+  "ingredient_cinnamon_sugar": "Cinnamon Sugar"
 }

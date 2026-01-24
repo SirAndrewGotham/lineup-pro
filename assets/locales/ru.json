@@ -15,5 +15,47 @@
   "difficulty_label": "Сложность",
   "timer_label": "Таймер",
   "select_language": "Выберите язык",
-  "toggle_language": "Переключить язык"
+  "toggle_language": "Переключить язык",
+  "flashcards_button": "Карточки",
+
+  "main": {
+    "title": "LineUp Pro",
+    "subtitle": "Интерактивный Тренажер Сборки",
+    "training_mode": "Режим Обучения",
+    "practice_mode": "Режим Практики",
+    "exam_mode": "Экзаменационный Режим",
+    "flashcards_mode": "Режим Карточек",
+    "progress_tracking": "Отслеживание Прогресса",
+    "settings": "Настройки",
+    "exit": "Выход"
+  },
+
+  "dish_big_hit": "Большой хит",
+  "dish_quarter_pounder": "Четвертьфунтовый бургер",
+  "dish_chicken_sandwich": "Куриный сэндвич",
+  "dish_french_fries": "Картофель фри",
+  "dish_apple_pie": "Яблочный пирог",
+
+  "ingredient_bottom_bun": "Нижняя булочка",
+  "ingredient_beef_patty": "Говяжья котлета",
+  "ingredient_cheese_slice": "Кусочек сыра",
+  "ingredient_lettuce": "Салат",
+  "ingredient_pickles": "Соленые огурцы",
+  "ingredient_onions": "Лук",
+  "ingredient_ketchup": "Кетчуп",
+  "ingredient_mustard": "Горчица",
+  "ingredient_top_bun": "Верхняя булочка",
+  "ingredient_sesame_bun_bottom": "Нижняя часть булочки с кунжутом",
+  "ingredient_quarter_patty": "Котлетка весом в четверть фунта",
+  "ingredient_tomato": "Помидор",
+  "ingredient_special_sauce": "Специальный соус",
+  "ingredient_brioche_bun": "Булочка бриошь",
+  "ingredient_chicken_fillet": "Куриное филе",
+  "ingredient_mayonnaise": "Майонез",
+  "ingredient_potatoes": "Картофель",
+  "ingredient_vegetable_oil": "Растительное масло",
+  "ingredient_salt": "Соль",
+  "ingredient_pie_crust": "Основа для пирога",
+  "ingredient_apple_filling": "Яблочная начинка",
+  "ingredient_cinnamon_sugar": "Корица и сахар"
 }

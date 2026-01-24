@@ -2,6 +2,8 @@ import json
 import logging
 from pathlib import Path
 from typing import Dict, Any
+from kivy.event import EventDispatcher
+from kivy.properties import StringProperty
 
 logger = logging.getLogger(__name__)
 

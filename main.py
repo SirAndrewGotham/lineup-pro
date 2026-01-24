@@ -23,7 +23,11 @@ from kivy.uix.screenmanager import ScreenManager
 from kivy.core.window import Window
 from kivy.logger import Logger
 
-# Try to import all screens with fallbacks
+# Import screens with fallbacks
+MAIN_SCREEN_IMPORTED = False
+SETTINGS_SCREEN_IMPORTED = False
+FLASHCARDS_SCREEN_IMPORTED = False
+
 try:
     from ui.screens.main_screen import MainScreen
     MAIN_SCREEN_IMPORTED = True
@@ -37,6 +41,13 @@ try:
 except ImportError as e:
     Logger.warning(f"SettingsScreen import failed: {e}")
     SETTINGS_SCREEN_IMPORTED = False
+
+try:
+    from ui.screens.flashcards_screen import FlashcardsScreen
+    FLASHCARDS_SCREEN_IMPORTED = True
+except ImportError as e:
+    Logger.warning(f"FlashcardsScreen import failed: {e}")
+    FLASHCARDS_SCREEN_IMPORTED = False
 
 # Create fallback screens if imports fail
 if not MAIN_SCREEN_IMPORTED:
@@ -53,6 +64,7 @@ if not MAIN_SCREEN_IMPORTED:
             layout.add_widget(Label(text='LineUp Pro', font_size=32))
             layout.add_widget(Button(text='Training (Coming Soon)'))
             layout.add_widget(Button(text='Practice (Coming Soon)'))
+            layout.add_widget(Button(text='Flashcards (Coming Soon)'))
             layout.add_widget(Button(text='Settings', on_release=lambda x: setattr(self.manager, 'current', 'settings')))
             layout.add_widget(Button(text='Exit', on_press=lambda x: MDApp.get_running_app().stop()))
             self.add_widget(layout)
@@ -76,6 +88,23 @@ if not SETTINGS_SCREEN_IMPORTED:
             layout.add_widget(Button(text='Back', on_press=lambda x: setattr(self.manager, 'current', 'main')))
             self.add_widget(layout)
 
+if not FLASHCARDS_SCREEN_IMPORTED:
+    from kivy.uix.screenmanager import Screen
+    from kivy.uix.boxlayout import BoxLayout
+    from kivy.uix.button import Button
+    from kivy.uix.label import Label
+
+    class FlashcardsScreen(Screen):
+        def __init__(self, **kwargs):
+            super().__init__(**kwargs)
+            self.name = 'flashcards'
+            layout = BoxLayout(orientation='vertical', padding=50, spacing=20)
+            layout.add_widget(Label(text='Flashcards Mode', font_size=32))
+            layout.add_widget(Label(text='Interactive dish memorization tool'))
+            layout.add_widget(Button(text='Start Flashcards'))
+            layout.add_widget(Button(text='Back', on_press=lambda x: setattr(self.manager, 'current', 'main')))
+            self.add_widget(layout)
+
 
 class LineUpPro(MDApp):
     """Main application class for LineUp Pro training simulator"""
@@ -83,8 +112,9 @@ class LineUpPro(MDApp):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.title = "LineUp Pro - Interactive Training Simulator"
-        self.theme_cls.theme_style = "Light"  # KivyMD theme
-        self.theme_cls.primary_palette = "Blue"
+        if KIVYMD_AVAILABLE:
+            self.theme_cls.theme_style = "Light"  # KivyMD theme
+            self.theme_cls.primary_palette = "Blue"
 
     def build(self):
         """Build and return the root widget"""
@@ -116,8 +146,9 @@ class LineUpPro(MDApp):
         self.sm = ScreenManager()
 
         # Add screens
-        self.sm.add_widget(MainScreen())
-        self.sm.add_widget(SettingsScreen())
+        self.sm.add_widget(MainScreen(name='main'))
+        self.sm.add_widget(SettingsScreen(name='settings'))
+        self.sm.add_widget(FlashcardsScreen(name='flashcards'))
 
         # Set initial screen
         self.sm.current = 'main'
